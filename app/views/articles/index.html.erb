@@ -5,7 +5,7 @@
     <th>Title</th>
     <th>Topic</th>
     <th>Text</th>
-    <th colspan="2"></th>
+    <th colspan="4"></th>
   </tr>
  
   <% @articles.each do |article| %>
@@ -14,7 +14,9 @@
       <td><%= article.topic %> &nbsp; </td>
       <td><%= article.text %> &nbsp; </td>
       <td><%= link_to 'Show', article_path(article) %> &nbsp;</td>
-      <td><%= link_to 'Edit', edit_article_path(article) %></td>
+      <td><%= link_to 'Edit', edit_article_path(article) %> &nbsp;</td>
+      <td><%= link_to 'Destroy', article_path(article),
+                    method: :delete, data: { confirm: 'Are you sure?' } %></td>
     </tr>
   <% end %>
 </table>
